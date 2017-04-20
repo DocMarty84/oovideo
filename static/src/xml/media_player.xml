@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="oovideo.MediaPlayer">
+    <div class="list-group">
+        <t t-if="widget.folder_data[widget.folder_id].parent_id">
+            <a href="#" class="list-group-item oov_folder">Back to list</a>
+        </t>
+    </div>
+    <div class="row oov_container">
+        <div id="player-wrapper" class="player oov_player"></div>
+        <table class="table oov_options">
+            <tbody>
+                <tr>
+                    <td><b>Bitrate</b></td>
+                    <td>
+                        <select class="selectpicker oov_br">
+                            <t t-foreach="widget.media_info.br_list" t-as="br">
+                                <option><t t-esc="br"/></option>
+                            </t>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Resolution</b></td>
+                    <td>
+                        <select class="selectpicker oov_res">
+                            <t t-foreach="widget.media_info.res_list" t-as="res">
+                                <option><t t-esc="res"/></option>
+                            </t>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Language</b></td>
+                    <td>
+                        <select class="selectpicker oov_lang">
+                            <t t-foreach="widget.media_info.audio_tracks_lang" t-as="lang">
+                                <option><t t-esc="lang"/></option>
+                            </t>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Subtitles</b></td>
+                    <td>
+                        <select class="selectpicker oov_sub">
+                            <t t-foreach="widget.media_info.sub_list" t-as="sub">
+                                <option><t t-esc="sub"/></option>
+                            </t>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-sm-7"/>
+        <div class="col-sm-2">
+            <div class="checkbox">
+                <label><input type="checkbox" value="1" class="oov_raw"/>Raw</label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-default btn-block oov_reload" href="#"><i class="fa fa-repeat"></i> Reload</a>
+        </div>
+    </div>
+</t>
+</templates>

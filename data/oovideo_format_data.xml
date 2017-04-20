@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oovideo_format_avi" model="oovideo.format">
+            <field name="name">avi</field>
+            <field name="mimetype">video/avi</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_m4v" model="oovideo.format">
+            <field name="name">m4v</field>
+            <field name="mimetype">video/mp4</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_mkv" model="oovideo.format">
+            <field name="name">mkv</field>
+            <field name="mimetype">video/x-matroska</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_mov" model="oovideo.format">
+            <field name="name">mov</field>
+            <field name="mimetype">video/quicktime</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_mp4" model="oovideo.format">
+            <field name="name">mp4</field>
+            <field name="mimetype">video/mp4</field>
+            <field name="browser_support" eval="True"></field>
+        </record>
+        <record id="oovideo_format_mpg" model="oovideo.format">
+            <field name="name">mpg</field>
+            <field name="mimetype">video/mpeg</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_ts" model="oovideo.format">
+            <field name="name">ts</field>
+            <field name="mimetype">video/MP2T</field>
+            <field name="browser_support" eval="False"></field>
+        </record>
+        <record id="oovideo_format_webm" model="oovideo.format">
+            <field name="name">webm</field>
+            <field name="mimetype">video/webm</field>
+            <field name="browser_support" eval="True"></field>
+        </record>
+    </data>
+</odoo>

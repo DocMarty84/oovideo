@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Fist Level Menu -->
+    <menuitem name="Video" id="menu_oovideo_root" sequence="95"/>
+
+    <!-- Second Level Menu -->
+    <menuitem id="menu_oovideo_library" name="Library" parent="menu_oovideo_root" sequence="10"/>
+    <menuitem id="menu_oovideo_config" name="Configuration" parent="menu_oovideo_root" sequence="100"/>
+</odoo>

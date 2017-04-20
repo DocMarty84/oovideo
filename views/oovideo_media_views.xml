@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="oovideo_media_view_form" model="ir.ui.view">
+        <field name="name">oovideo.media.form</field>
+        <field name="model">oovideo.media</field>
+        <field name="arch" type="xml">
+            <form string="Media">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="duration"/>
+                            <field name="height"/>
+                            <field name="width"/>
+                            <field name="bitrate"/>
+                            <field name="audio_tracks"/>
+                            <field name="audio_tracks_lang"/>
+                        </group>
+                        <group>
+                            <field name="last_modification" groups="base.group_no_one"/>
+                            <field name="path"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="oovideo_media_view_tree" model="ir.ui.view">
+        <field name="name">oovideo.media.tree</field>
+        <field name="model">oovideo.media</field>
+        <field name="arch" type="xml">
+            <tree string="Media">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="oovideo_media_view_search" model="ir.ui.view">
+        <field name="name">oovideo.media.search</field>
+        <field name="model">oovideo.media</field>
+        <field name="arch" type="xml">
+            <search string="Medias">
+                <field name="name"/>
+                <field name="path"/>
+
+                <filter string="Added Today" name="filter_added_today"
+                    domain="[('create_date', '&gt;=', time.strftime('%%Y-%%m-%%d''))]"/>
+                <filter string="Added This Month" name="filter_added_this_month"
+                    domain="[('create_date', '&gt;=', time.strftime('%%Y-%%m-01''))]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_media" model="ir.actions.act_window">
+        <field name="name">Medias</field>
+        <field name="res_model">oovideo.media</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                You will find here all your medias.
+            </p><p>
+                As soon as a folder is added in your library, the media will be listed here.
+            </p>
+        </field>
+    </record>
+
+    <!-- Third Level Menu -->
+    <menuitem id="menu_action_media" parent="menu_oovideo_library" action="action_media" sequence="10" groups="base.group_no_one"/>
+</odoo>

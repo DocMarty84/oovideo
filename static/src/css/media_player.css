@@ -1,0 +1,9 @@
+.oov_container {
+    margin: auto;
+    width: 640px;
+    padding-top: 10px;
+}
+
+.oov_options tr td:nth-child(1){
+    width: 30%;
+}

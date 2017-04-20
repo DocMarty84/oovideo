@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="oovideo_folder_view_form" model="ir.ui.view">
+        <field name="name">oovideo.folder.form</field>
+        <field name="model">oovideo.folder</field>
+        <field name="arch" type="xml">
+            <form string="Folder">
+                <header>
+                    <button name="action_scan_folder" string="Scan" type="object"/>
+                    <button name="action_scan_folder_full" string="Force Full Scan"
+                        type="object" groups="base.group_no_one"/>
+                </header>
+                <sheet>
+                    <field name="user_id" invisible="1"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="path"/>
+                        <field name="exclude_autoscan"/>
+                    </group>
+                    <group>
+                        <field name="last_scan" readonly="1"/>
+                        <field name="last_scan_duration" readonly="1" groups="base.group_no_one"/>
+                        <field name="locked" groups="base.group_no_one"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="oovideo_folder_view_tree" model="ir.ui.view">
+        <field name="name">oovideo.folder.tree</field>
+        <field name="model">oovideo.folder</field>
+        <field name="arch" type="xml">
+            <tree string="Folders" decoration-danger="locked == True">
+                <field name="locked" invisible="1"/>
+                <field name="name"/>
+                <field name="path"/>
+                <field name="last_scan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_folder" model="ir.actions.act_window">
+        <field name="name">Folders</field>
+        <field name="res_model">oovideo.folder</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('root', '=', True)]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Set-up the media directories to scan.
+            </p><p>
+                Your videos wil be automatically listed in the corresponding menu. Scanning a
+                directory is usually quite fast, taking around 30 seconds to scan 150 files.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_oovideo_browse" model="ir.actions.client">
+        <field name="name">Browse Files</field>
+        <field name="tag">oovideo_browse</field>
+    </record>
+
+    <!-- Third Level Menu -->
+    <menuitem id="menu_action_folder" parent="menu_oovideo_config" action="action_folder" sequence="10"/>
+    <menuitem id="menu_action_oovideo_browse" parent="menu_oovideo_library" action="action_oovideo_browse" sequence="20"/>
+</odoo>

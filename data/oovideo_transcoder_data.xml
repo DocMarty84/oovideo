@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oovideo_transcoder_0" model="oovideo.transcoder">
+            <field name="name">FFmpeg to TS</field>
+            <field name="command">ffmpeg -ss %s -t %d -i %i -s %r -v 0 -b:v %bk -maxrate %bk -bufsize 256k -flags -global_header -map 0:v:0 -map 0:%l -ac 2 -f mpegts -c:v libx264 -preset superfast -c:a aac -b:a 96k -strict -2 -threads 0 -copyts -</field>
+            <field name="bitrate">500</field>
+            <field name="sequence">10</field>
+            <field name="input_formats" eval="[(6, 0, [
+                ref('oovideo.oovideo_format_avi'), ref('oovideo.oovideo_format_mkv'),
+                ref('oovideo.oovideo_format_mp4'), ref('oovideo.oovideo_format_mpg'),
+                ref('oovideo.oovideo_format_webm'), ref('oovideo.oovideo_format_mov'),
+                ref('oovideo.oovideo_format_m4v'),
+                ])]">
+            </field>
+            <field name="output_format" ref="oovideo.oovideo_format_ts"></field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oovideo_folder,oovideo.folder,model_oovideo_folder,base.group_user,1,1,1,1
+access_oovideo_format,oovideo.format,model_oovideo_format,base.group_user,1,0,0,0
+access_oovideo_media,oovideo.media,model_oovideo_media,base.group_user,1,0,0,0
+access_oovideo_transcoder,oovideo.transcoder,model_oovideo_transcoder,base.group_user,1,0,0,0
