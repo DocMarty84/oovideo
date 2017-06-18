@@ -10,6 +10,7 @@ from pymediainfo import MediaInfo
 
 _logger = logging.getLogger(__name__)
 
+
 class VideoFolderScan(models.TransientModel):
     _name = 'oovideo.folder.scan'
     _description = 'Video Folder Scan'

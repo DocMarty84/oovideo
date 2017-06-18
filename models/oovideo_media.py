@@ -11,6 +11,7 @@ except ImportError:
 from odoo import fields, models, _
 from oovideo_transcoder import BR_LIST, RES_LIST
 
+
 class VideoMedia(models.Model):
     _name = 'oovideo.media'
     _description = 'Video Media'
@@ -77,7 +78,7 @@ class VideoMedia(models.Model):
             duration = 10 if remaining_duration >= 0 else remaining_duration + 10
             res.write('#EXTINF:%s,\n' % (duration))
             res.write(
-                '/oovideo/trans/%s.ts?seek=%s&dur=%s&br=%s&res=%s&lang=%s\n'\
+                '/oovideo/trans/%s.ts?seek=%s&dur=%s&br=%s&res=%s&lang=%s\n'
                 % (self.id, seek, duration, bitrate, resolution, lang)
             )
         res.write('#EXT-X-ENDLIST')

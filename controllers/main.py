@@ -12,6 +12,7 @@ from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
+
 class VideoController(http.Controller):
     @http.route(['/oovideo/stream/<int:media_id>.<string:vformat>'], type='http', auth='user')
     def stream(self, media_id, vformat, **kwargs):

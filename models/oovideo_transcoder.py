@@ -18,6 +18,7 @@ RES_LIST = OrderedDict([
     ('1080p', '1920x1080'),
 ])
 
+
 class VideoTranscoder(models.Model):
     _name = 'oovideo.transcoder'
     _description = 'Video Transcoder'

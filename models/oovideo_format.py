@@ -2,6 +2,7 @@
 
 from odoo import fields, models
 
+
 class VideoFormat(models.Model):
     _name = 'oovideo.format'
     _description = 'Video Format'

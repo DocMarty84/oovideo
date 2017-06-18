@@ -8,6 +8,7 @@ from odoo import fields, models, api
 
 _logger = logging.getLogger(__name__)
 
+
 class VideoFolder(models.Model):
     _name = 'oovideo.folder'
     _description = 'Video Folder'
