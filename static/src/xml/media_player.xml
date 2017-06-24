@@ -4,7 +4,7 @@
 <t t-name="oovideo.MediaPlayer">
     <div class="list-group">
         <t t-if="widget.folder_data[widget.folder_id].parent_id">
-            <a href="#" class="list-group-item oov_folder">Back to list</a>
+            <a class="list-group-item oov_folder">Back to list</a>
         </t>
     </div>
     <div class="row oov_container">
