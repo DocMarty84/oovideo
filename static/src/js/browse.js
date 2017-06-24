@@ -11,8 +11,8 @@ var _t = core._t;
 
 var Browse = Widget.extend({
     events: {
-        'click .oov_folder': 'openFolder',
-        'click .oov_media': 'mediaPlayer',
+        'click .oov_folder': '_onClickFolder',
+        'click .oov_media': '_onClickPlayMedia',
     },
 
     init: function (parent, action) {
@@ -25,11 +25,16 @@ var Browse = Widget.extend({
         return this.browse();
     },
 
-    start: function() {
+    start: function () {
         // Render now, since events don't work when using the 'template' attribute.
         this.$el.html(QWeb.render('oovideo.Browse', {widget: this}));
         return this._super.apply(this, arguments);
     },
+
+    //--------------------------------------------------------------------------
+    // Public
+    //--------------------------------------------------------------------------
+
 
     browse: function () {
         var self = this;
@@ -45,7 +50,12 @@ var Browse = Widget.extend({
         }
     },
 
-    openFolder: function (ev) {
+    //--------------------------------------------------------------------------
+    // Handlers
+    //--------------------------------------------------------------------------
+
+
+    _onClickFolder: function (ev) {
         this.do_action({
             type: 'ir.actions.client',
             tag: 'oovideo_browse',
@@ -57,7 +67,7 @@ var Browse = Widget.extend({
         });
     },
 
-    mediaPlayer: function (ev) {
+    _onClickPlayMedia: function (ev) {
         this.do_action({
             type: 'ir.actions.client',
             tag: 'oovideo_media_player',
