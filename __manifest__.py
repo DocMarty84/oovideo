@@ -25,7 +25,6 @@ Video Collection
         'views/oovideo_media_views.xml',
         'views/oovideo_transcoder_views.xml',
         'views/oovideo.xml',
-        'views/tour_views.xml',
 
         'data/oovideo_folder_data.xml',
         'data/oovideo_format_data.xml',
