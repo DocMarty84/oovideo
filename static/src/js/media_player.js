@@ -2,7 +2,6 @@ odoo.define('oovideo.MediaPlayer', function (require) {
 'use strict';
 
 var core = require('web.core');
-var Model = require('web.Model');
 var Widget = require('web.Widget');
 
 var QWeb = core.qweb;
@@ -25,9 +24,14 @@ var MediaPlayer = Widget.extend({
 
     willStart: function () {
         var self = this;
-        return new Model('oovideo.media').call('oovideo_media_info', [self.media_id]).then(function (data) {
-            self.media_info = data;
-        });
+        return this._rpc({
+                model: 'oovideo.media',
+                method: 'oovideo_media_info',
+                args: [self.media_id],
+            })
+            .then(function (data) {
+                self.media_info = data;
+            });
     },
 
     start: function () {

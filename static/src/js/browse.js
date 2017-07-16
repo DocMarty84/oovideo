@@ -2,7 +2,6 @@ odoo.define('oovideo.Browse', function (require) {
 'use strict';
 
 var core = require('web.core');
-var Model = require('web.Model');
 var Widget = require('web.Widget');
 
 var QWeb = core.qweb;
@@ -42,11 +41,16 @@ var Browse = Widget.extend({
         if (this.folder_data[this.folder_id]) {
             return $.when();
         } else {
-            return new Model('oovideo.folder').call('oovideo_browse', [self.folder_id]).then(function (data) {
-                var tmp_data = {};
-                tmp_data[self.folder_id] = JSON.parse(data);
-                _.extend(self.folder_data, tmp_data);
-            });
+            return this._rpc({
+                    model: 'oovideo.folder',
+                    method: 'oovideo_browse',
+                    args: [self.folder_id],
+                })
+                .then(function (data) {
+                    var tmp_data = {};
+                    tmp_data[self.folder_id] = JSON.parse(data);
+                    _.extend(self.folder_data, tmp_data);
+                });
         }
     },
 
