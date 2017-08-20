@@ -43,9 +43,6 @@ class VideoTranscoder(models.Model):
         'Bitrate', required=True,
         help='Default bitrate. Can be changed if necessary when the transcoding function is called'
     )
-    input_formats = fields.Many2many(
-        'oovideo.format', string='Input Formats', required=True, index=True,
-    )
     output_format = fields.Many2one('oovideo.format', string='Output Format', required=True)
     buffer_size = fields.Integer(
         'Buffer Size (KB)', required=True, default=1000,
