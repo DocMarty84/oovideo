@@ -6,7 +6,7 @@ import os
 import threading
 
 from odoo import fields, models, api, _
-from pymediainfo import MediaInfo
+from .pymediainfo import MediaInfo
 
 _logger = logging.getLogger(__name__)
 
@@ -113,7 +113,7 @@ class VideoFolderScan(models.TransientModel):
         query = "SELECT path, id, last_modification FROM oovideo_folder WHERE user_id = %s;"
         self.env.cr.execute(query, params)
         res = self.env.cr.fetchall()
-        cache['folder'] = {r[0]: (r[1], r[2]) for r in res}
+        cache['folder'] = {r[0]: (r[1], r[2] or 0) for r in res}
 
         params = (user_id, folder_id)
         query = '''

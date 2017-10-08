@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import oovideo_folder
-import oovideo_folder_scan
-import oovideo_format
-import oovideo_media
-import oovideo_transcoder
+from . import oovideo_folder
+from . import oovideo_folder_scan
+from . import oovideo_format
+from . import oovideo_media
+from . import oovideo_transcoder

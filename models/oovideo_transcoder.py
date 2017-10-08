@@ -5,7 +5,6 @@ import datetime
 import os
 import subprocess
 
-
 from odoo import fields, models
 
 BR_LIST = [200, 300, 400, 500, 700, 1200, 1500, 1700, 2000, 2500, 3000, 4000, 5000, 6000]

@@ -3,13 +3,10 @@
 import ast
 import glob
 import os
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
+from io import BytesIO
 
 from odoo import fields, models, _
-from oovideo_transcoder import BR_LIST, RES_LIST
+from .oovideo_transcoder import BR_LIST, RES_LIST
 
 
 class VideoMedia(models.Model):
@@ -66,21 +63,22 @@ class VideoMedia(models.Model):
         else:
             resolution = RES_LIST[resolution]
         lang = kwargs.get('lang', 1)
-        res = StringIO()
-        res.write('#EXTM3U\n')
-        res.write('#EXT-X-VERSION:1\n')
-        res.write('#EXT-X-TARGETDURATION:10\n')
-        total_duration = self.duration / 1000
+        res_str = ''
+        res_str += '#EXTM3U\n'
+        res_str += '#EXT-X-VERSION:1\n'
+        res_str += '#EXT-X-TARGETDURATION:10\n'
+        total_duration = self.duration // 1000
         remaining_duration = total_duration
         while remaining_duration > 0:
             seek = total_duration - remaining_duration
             remaining_duration -= 10
             duration = 10 if remaining_duration >= 0 else remaining_duration + 10
-            res.write('#EXTINF:%s,\n' % (duration))
-            res.write(
-                '/oovideo/trans/%s.ts?seek=%s&dur=%s&br=%s&res=%s&lang=%s\n'
-                % (self.id, seek, duration, bitrate, resolution, lang)
+            res_str += '#EXTINF:%s,\n' % (duration)
+            res_str += '/oovideo/trans/{}.ts?seek={}&dur={}&br={}&res={}&lang={}\n'.format(
+                self.id, seek, duration, bitrate, resolution, lang
             )
-        res.write('#EXT-X-ENDLIST')
+        res_str += '#EXT-X-ENDLIST'
+        res = BytesIO()
+        res.write(bytes(res_str, 'utf-8'))
         res.seek(0)
         return res
