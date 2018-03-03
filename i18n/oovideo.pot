@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 15:34+0000\n"
-"PO-Revision-Date: 2017-05-13 15:34+0000\n"
+"POT-Creation-Date: 2018-03-03 07:30+0000\n"
+"PO-Revision-Date: 2018-03-03 07:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:52
+#: code:addons/oovideo/static/src/js/browse.js:62
 #: code:addons/oovideo/static/src/js/media_player.js:84
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
@@ -205,11 +205,6 @@ msgid "ID"
 msgstr ""
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_input_formats
-msgid "Input Formats"
-msgstr ""
-
-#. module: oovideo
 #. openerp-web
 #: code:addons/oovideo/static/src/xml/media_player.xml:35
 #, python-format
@@ -280,7 +275,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:64
+#: code:addons/oovideo/static/src/js/browse.js:74
 #, python-format
 msgid "Media Player"
 msgstr ""
@@ -309,7 +304,7 @@ msgid "No auto-scan"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_media.py:40
+#: code:addons/oovideo/models/oovideo_media.py:41
 #, python-format
 msgid "Original"
 msgstr ""
@@ -438,7 +433,7 @@ msgid "Transcoders"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder_scan.py:206
+#: code:addons/oovideo/models/oovideo_folder_scan.py:207
 #, python-format
 msgid "Unknown"
 msgstr ""
