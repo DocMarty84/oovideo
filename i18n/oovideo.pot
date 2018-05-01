@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 15:34+0000\n"
-"PO-Revision-Date: 2017-05-13 15:34+0000\n"
+"POT-Creation-Date: 2018-05-01 15:43+0000\n"
+"PO-Revision-Date: 2018-05-01 15:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,8 +65,8 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:52
-#: code:addons/oovideo/static/src/js/media_player.js:84
+#: code:addons/oovideo/static/src/js/browse.js:66
+#: code:addons/oovideo/static/src/js/media_player.js:88
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
 #, python-format
@@ -280,7 +280,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:64
+#: code:addons/oovideo/static/src/js/browse.js:78
 #, python-format
 msgid "Media Player"
 msgstr ""
@@ -309,7 +309,7 @@ msgid "No auto-scan"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_media.py:40
+#: code:addons/oovideo/models/oovideo_media.py:38
 #, python-format
 msgid "Original"
 msgstr ""
@@ -438,7 +438,7 @@ msgid "Transcoders"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder_scan.py:206
+#: code:addons/oovideo/models/oovideo_folder_scan.py:207
 #, python-format
 msgid "Unknown"
 msgstr ""
@@ -510,5 +510,12 @@ msgstr ""
 #: model:ir.actions.act_window,help:oovideo.action_folder
 msgid "Your videos wil be automatically listed in the corresponding menu. Scanning a\n"
 "                directory is usually quite fast, taking around 30 seconds to scan 150 files."
+msgstr ""
+
+#. module: oovideo
+#: model:ir.actions.server,name:oovideo.oovideo_scan_folder_ir_actions_server
+#: model:ir.cron,cron_name:oovideo.oovideo_scan_folder
+#: model:ir.cron,name:oovideo.oovideo_scan_folder
+msgid "oovideo.scan.folder"
 msgstr ""
 
