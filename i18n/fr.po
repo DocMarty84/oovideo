@@ -48,8 +48,8 @@ msgstr "Taux d’échantillonnage"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:52
-#: code:addons/oovideo/static/src/js/media_player.js:84
+#: code:addons/oovideo/static/src/js/browse.js:66
+#: code:addons/oovideo/static/src/js/media_player.js:88
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
 msgid "Browse Files"
@@ -193,11 +193,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_input_formats
-msgid "Input Formats"
-msgstr "Formats d'Entrée"
-
-#. module: oovideo
 #. openerp-web
 #: code:addons/oovideo/static/src/xml/media_player.xml:35
 msgid "Language"
@@ -266,7 +261,7 @@ msgstr "Media"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:64
+#: code:addons/oovideo/static/src/js/browse.js:78
 msgid "Media Player"
 msgstr "Lecteur Media"
 
@@ -294,7 +289,7 @@ msgid "No auto-scan"
 msgstr "Pas d'auto-scan"
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_media.py:40
+#: code:addons/oovideo/models/oovideo_media.py:38
 msgid "Original"
 msgstr "Original"
 
@@ -417,7 +412,7 @@ msgid "Transcoders"
 msgstr "Encodeurs"
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder_scan.py:206
+#: code:addons/oovideo/models/oovideo_folder_scan.py:207
 msgid "Unknown"
 msgstr "Inconnu"
 
@@ -494,4 +489,9 @@ msgstr "Ajoutez votre premier répertoire média <b>ici</b>"
 msgid "Your videos wil be automatically listed in the corresponding menu. Scanning a\n"
 "                directory is usually quite fast, taking around 30 seconds to scan 150 files."
 msgstr "Vos vidéos seront automatiquement listée dans les menus correspondants. L'analyse d'un répertoire est habituellement assez rapide, avec une durée d'environ 30 secondes pour 150 fichiers."
+
+#. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_input_formats
+msgid "Input Formats"
+msgstr "Formats d'Entrée"
 
