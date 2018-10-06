@@ -67,7 +67,7 @@ class VideoMedia(models.Model):
         res_str += '#EXTM3U\n'
         res_str += '#EXT-X-VERSION:1\n'
         res_str += '#EXT-X-TARGETDURATION:10\n'
-        total_duration = self.duration // 1000
+        total_duration = self.duration
         remaining_duration = total_duration
         while remaining_duration > 0:
             seek = total_duration - remaining_duration
