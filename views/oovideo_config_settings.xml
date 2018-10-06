@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oovideo_config_settings_view_form" model="ir.ui.view">
+            <field name="name">OOVideo Settings</field>
+            <field name="model">oovideo.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure OOVideo" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+                    </header>
+                    <group string="Folders">
+                        <field name="folder_sharing" widget="radio"/>
+                    </group>
+                    <group string="Features">
+                        <field name="cron" widget="radio"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_oovideo_config_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oovideo.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem
+            id="menu_video_general_settings"
+            name="Settings"
+            parent="menu_oovideo_config"
+            sequence="0"
+            action="action_oovideo_config_settings"
+            groups="base.group_system"/>
+    </data>
+</odoo>

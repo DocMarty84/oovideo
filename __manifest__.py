@@ -21,6 +21,7 @@ Video Collection
         'security/oovideo_security.xml',
 
         'views/oovideo_menu_views.xml',
+        'views/oovideo_config_settings.xml',
         'views/oovideo_folder_views.xml',
         'views/oovideo_media_views.xml',
         'views/oovideo_transcoder_views.xml',

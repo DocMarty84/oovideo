@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from . import oovideo_config_settings
 from . import oovideo_folder
 from . import oovideo_folder_scan
 from . import oovideo_format
