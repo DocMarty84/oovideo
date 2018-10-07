@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <a class="btn btn-default btn-block oov_reload" href="#"><i class="fa fa-repeat"></i> Reload</a>
+            <a class="btn btn-default btn-block oov_reload"><i class="fa fa-repeat"></i> Reload</a>
         </div>
     </div>
 </t>

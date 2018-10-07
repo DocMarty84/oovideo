@@ -42,6 +42,10 @@ var MediaPlayer = Widget.extend({
         return this._super.apply(this, arguments);
     },
 
+    canBeRemoved: function () {
+        return $.when();
+    },
+
     _initPlaybackData: function () {
         this.bitrate = _.contains(this.media_info.br_list, 500) ? 500 : this.media_info.br_list[0];
         this.$('.oov_br').val(String(this.bitrate))
