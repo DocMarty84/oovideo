@@ -206,7 +206,7 @@ class VideoFolderScan(models.TransientModel):
                     vals['audio_tracks_lang'] +=\
                         [str(vals['audio_tracks']) + ': ' + (track.language or _('Unknown'))]
         except:
-            _logger.warning('Error while opening file "%s"', file_path)
+            _logger.warning('Error while opening file "%s"', file_path, exc_info=1)
         return vals
 
     def _scan_folder(self, folder_id):
