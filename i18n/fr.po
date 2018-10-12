@@ -94,6 +94,7 @@ msgid "Configuration"
 msgstr "Configuration"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_create_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_create_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_create_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_create_uid
@@ -103,6 +104,7 @@ msgid "Created by"
 msgstr "Créé par"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_create_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_create_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_create_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_create_date
@@ -117,6 +119,7 @@ msgid "Default bitrate. Can be changed if necessary when the transcoding functio
 msgstr "Taux d'échantillonnage par défaut. Peut être chagé si nécessaire quand la fonction d'encodage est appelée."
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_display_name
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_display_name
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_display_name
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_display_name
@@ -159,6 +162,7 @@ msgstr "Le chemin du répertoire doit être unique"
 #. module: oovideo
 #: model:ir.actions.act_window,name:oovideo.action_folder
 #: model:ir.ui.menu,name:oovideo.menu_action_folder
+#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
 #: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_tree
 msgid "Folders"
 msgstr "Répertoires"
@@ -184,6 +188,7 @@ msgid "Heigth"
 msgstr "Hauteur"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_id
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_id
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_id
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_id
@@ -205,6 +210,7 @@ msgid "Last Modification"
 msgstr "Dernière Modification"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings___last_update
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder___last_update
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan___last_update
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format___last_update
@@ -219,6 +225,7 @@ msgid "Last Scanned"
 msgstr "Analysés Dernièrement"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_write_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_write_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_write_uid
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_write_uid
@@ -228,6 +235,7 @@ msgid "Last Updated by"
 msgstr "Dernière Mise-à-jour par"
 
 #. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_write_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_write_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_write_date
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format_write_date
@@ -494,4 +502,77 @@ msgstr "Vos vidéos seront automatiquement listée dans les menus correspondants
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_input_formats
 msgid "Input Formats"
 msgstr "Formats d'Entrée"
+
+#. module: oovideo
+#: model:ir.model.fields,help:oovideo.field_oovideo_config_settings_cron
+msgid "Activate automatic folder scan and image cache mechanism"
+msgstr "Activer l'analyse automatique des répertoires et le mécanisme de cache d'image"
+
+#. module: oovideo
+#: selection:oovideo.config.settings,cron:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: oovideo
+#: selection:oovideo.config.settings,folder_sharing:0
+msgid "Active (shared amongst all users)"
+msgstr "Actif (partagé entre tous les utilisateurs)"
+
+#. module: oovideo
+#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: oovideo
+#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: oovideo
+#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+msgid "Configure OOVideo"
+msgstr "Configurer OOVideo"
+
+#. module: oovideo
+#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_folder_sharing
+msgid "Folder Sharing"
+msgstr "Partage de répertoire"
+
+#. module: oovideo
+#: selection:oovideo.config.settings,cron:0
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: oovideo
+#: selection:oovideo.config.settings,folder_sharing:0
+msgid "Inactive (user specific)"
+msgstr "Inactif (spécifique à l'utilisateur)"
+
+#. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_cron
+msgid "Scheduled Actions"
+msgstr "Actions planifiées"
+
+#. module: oovideo
+#: model:ir.actions.act_window,name:oovideo.action_oovideo_config_settings
+#: model:ir.ui.menu,name:oovideo.menu_video_general_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: oovideo
+#: model:ir.model,name:oovideo.model_oovideo_config_settings
+msgid "oovideo.config.settings"
+msgstr ""
+
+#. module: oovideo
+#: model:ir.actions.server,name:oovideo.oovideo_scan_folder_ir_actions_server
+#: model:ir.cron,cron_name:oovideo.oovideo_scan_folder
+#: model:ir.cron,name:oovideo.oovideo_scan_folder
+msgid "oovideo.scan.folder"
+msgstr ""
 
