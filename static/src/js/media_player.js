@@ -10,9 +10,9 @@ var _t = core._t;
 
 var MediaPlayer = Widget.extend({
     events: {
-        'click .oov_folder': 'openFolder',
-        'click .oov_reload': 'reloadClappr',
-        'change .oov_raw': 'changeRaw',
+        'click .oov_folder': '_onClickFolder',
+        'click .oov_reload': '_onClickReload',
+        'change .oov_raw': '_onChangeRaw',
     },
 
     init: function (parent, action) {
@@ -45,6 +45,10 @@ var MediaPlayer = Widget.extend({
     canBeRemoved: function () {
         return $.when();
     },
+
+    //--------------------------------------------------------------------------
+    // Private
+    //--------------------------------------------------------------------------
 
     _initPlaybackData: function () {
         this.bitrate = _.contains(this.media_info.br_list, 500) ? 500 : this.media_info.br_list[0];
@@ -85,7 +89,11 @@ var MediaPlayer = Widget.extend({
         return '/oovideo/sub/' + this.media_id + '.srt?sub=' + this.sub;
     },
 
-    openFolder: function (ev) {
+    //--------------------------------------------------------------------------
+    // Handlers
+    //--------------------------------------------------------------------------
+
+    _onClickFolder: function (ev) {
         this.do_action({
             type: 'ir.actions.client',
             tag: 'oovideo_browse',
@@ -97,7 +105,7 @@ var MediaPlayer = Widget.extend({
         });
     },
 
-    reloadClappr: function (ev) {
+    _onClickReload: function (ev) {
         this.bitrate = this.$('.oov_br').val();
         this.resolution = this.$('.oov_res').val()
         this.resolution = this.resolution !== this.media_info.res_list[0] ? this.resolution : 'orig';
@@ -108,7 +116,7 @@ var MediaPlayer = Widget.extend({
         this._initClappr();
     },
 
-    changeRaw: function (ev) {
+    _onChangeRaw: function (ev) {
         if (this.$('.oov_raw').is(':checked')) {
             this.$('.oov_br,.oov_res,.oov_lang').attr('disabled', true);
         } else {
