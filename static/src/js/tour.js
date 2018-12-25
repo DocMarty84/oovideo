@@ -7,6 +7,10 @@ var tour = require('web_tour.tour');
 var _t = core._t;
 
 tour.register('oovideo_tour', [{
+    trigger: '.o_menu_header_lvl_1[data-menu-xmlid="oovideo.menu_oovideo_config"]',
+    content: _t('Explore the configuration'),
+    position: 'bottom',
+}, {
     trigger: '.o_menu_entry_lvl_2[data-menu-xmlid="oovideo.menu_action_folder"], .oe_menu_leaf[data-menu-xmlid="oovideo.menu_action_folder"]',
     content: _t('Add your first media folder <b>here</b>'),
     position: 'bottom',
