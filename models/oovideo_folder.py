@@ -4,7 +4,7 @@ import json
 import logging
 import os
 
-from odoo import fields, models, api
+from odoo import _, api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -36,12 +36,39 @@ class VideoFolder(models.Model):
         'Locked', default=False,
         help='When a folder is being scanned, it is flagged as "locked". It might be necessary to '
         'unlock it manually if scanning has failed or has been interrupted.')
-
+    root_preview = fields.Text('Preview Folder Content', compute='_compute_root_preview')
     path_name = fields.Char('Folder Name', compute='_compute_path_name')
 
     _sql_constraints = [
         ('oovideo_folder_path_uniq', 'unique(path, user_id)', 'Folder path must be unique!'),
     ]
+
+    @api.depends('path')
+    def _compute_root_preview(self):
+        ALLOWED_FILE_EXTENSIONS = self.env['oovideo.folder.scan'].ALLOWED_FILE_EXTENSIONS
+        for folder in self.filtered(lambda f: f.root and f.path):
+            i = 0
+            fn_paths = ''
+            for rootdir, dirnames, filenames in os.walk(folder.path):
+                ii = 0
+                for fn in filenames:
+                    print(fn)
+                    # Check file extension
+                    fn_ext = fn.split('.')[-1]
+                    if fn_ext and fn_ext.lower() not in ALLOWED_FILE_EXTENSIONS:
+                        continue
+
+                    fn_paths += '{}\n'.format(os.path.join(rootdir.replace(folder.path, ''), fn))
+                    i += 1
+                    ii += 1
+                    if ii > 3:
+                        fn_paths += '...\n'
+                        break
+                if i > 30:
+                    break
+            if not fn_paths:
+                fn_paths = _('No track found')
+            folder.root_preview = fn_paths
 
     @api.depends('path')
     def _compute_path_name(self):

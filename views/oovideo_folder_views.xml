@@ -12,19 +12,23 @@
                 </header>
                 <sheet>
                     <field name="user_id" invisible="1"/>
+                    <field name="root" invisible="1"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Name"/>
                         </h1>
                     </div>
                     <group>
-                        <field name="path"/>
-                        <field name="exclude_autoscan"/>
+                        <group>
+                            <field name="path"/>
+                            <field name="exclude_autoscan"/>
+                            <field name="last_scan" readonly="1"/>
+                            <field name="last_scan_duration" readonly="1" groups="base.group_no_one"/>
+                            <field name="locked" groups="base.group_no_one"/>
+                        </group>
                     </group>
                     <group>
-                        <field name="last_scan" readonly="1"/>
-                        <field name="last_scan_duration" readonly="1" groups="base.group_no_one"/>
-                        <field name="locked" groups="base.group_no_one"/>
+                        <field name="root_preview"/>
                     </group>
                 </sheet>
             </form>
