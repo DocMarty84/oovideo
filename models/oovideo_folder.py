@@ -112,15 +112,11 @@ class VideoFolder(models.Model):
         folder_id = self.id
         if folder_id:
             # Set the last modification date to zero so we force scanning all folders and files
-            with self.pool.cursor() as cr:
-                new_self = self.with_env(self.env(cr=cr))
-                folders =\
-                    new_self.env['oovideo.folder'].search([('id', 'child_of', folder_id)]) | self
-                folders.write({'last_modification': 0})
-                cr.execute(
-                    'UPDATE oovideo_media SET last_modification = 0 WHERE root_folder_id = %s',
-                    (folder_id,)
-                )
+            folders = self.env['oovideo.folder'].search([('id', 'child_of', folder_id)]) | self
+            folders.sudo().write({'last_modification': 0})
+            media = self.env['oovideo.media'].search([('root_folder_id', '=', folder_id)])
+            media.sudo().write({'last_modification': 0})
+            self.env.cr.commit()
             self.env['oovideo.folder.scan'].scan_folder_th(folder_id)
 
     @api.model

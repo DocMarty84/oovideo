@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import datetime
 import logging
 import os
 import threading
+from datetime import datetime as dt
 
-from odoo import fields, models, api, _
+from odoo import _, api, fields, models
+
 from .pymediainfo import MediaInfo
 
 _logger = logging.getLogger(__name__)
@@ -25,15 +26,6 @@ class VideoFolderScan(models.TransientModel):
         'webm',
     }
 
-    def _get_new_cursor(self):
-        '''
-        Method used to get a new cursor.
-
-        :return `self`: new cursor in the environment
-        '''
-        new_cr = self.pool.cursor()
-        return self.with_env(self.env(cr=new_cr))
-
     def _lock_folder(self, folder_id):
         '''
         Check if a folder is locked. If it is not locked, lock it. If it is locked, log an error.
@@ -51,7 +43,6 @@ class VideoFolderScan(models.TransientModel):
             res = True
 
         self.env.cr.commit()
-        self.env.cr.close()
         return res
 
     def _clean_directory(self, path, user_id):
@@ -225,18 +216,17 @@ class VideoFolderScan(models.TransientModel):
 
         :param int folder_id: ID of the folder to scan
         '''
-        with api.Environment.manage():
-            time_start = datetime.datetime.now()
+        with api.Environment.manage(), self.pool.cursor() as cr:
+            time_start = dt.now()
             # As this function is in a new thread, open a new cursor because the existing one may be
             # closed
             if not self.env.context.get('test_mode'):
-                self = self._get_new_cursor()
+                self = self.with_env(self.env(cr))
 
                 # Lock the folder. A new cursor is necessary right after since it is closed
                 # explicitly. If the folder is locked, do nothing
                 if not self._lock_folder(folder_id):
                     return {}
-                self = self._get_new_cursor()
 
             VideoFolder = self.env['oovideo.folder']
             VideoMedia = self.env['oovideo.media']
@@ -248,7 +238,6 @@ class VideoFolderScan(models.TransientModel):
             if not folder.exists():
                 if not self.env.context.get('test_mode'):
                     self.env.cr.commit()
-                    self.env.cr.close()
                 return {}
 
             # Build the cache
@@ -311,26 +300,17 @@ class VideoFolderScan(models.TransientModel):
                         # Commit and close the transaction
                         if not self.env.context.get('test_mode'):
                             self.env.cr.commit()
-                            self.env.cr.close()
-                            self = self._get_new_cursor()
-
-                        # Create environments with the new cursor, necessary for any DB call since
-                        # the cursor was explicitly closed
-                        VideoFolder = self.env['oovideo.folder']
-                        VideoMedia = self.env['oovideo.media']
-                        folder = VideoFolder.browse([folder_id])
 
             # Final stuff to write and tags cleaning
             if folder.exists():
                 folder.write({
                     'last_scan': fields.Datetime.now(),
                     'last_scan_duration': round(
-                        (datetime.datetime.now() - time_start).total_seconds()),
+                        (dt.now() - time_start).total_seconds()),
                     'locked': False,
                 })
             if not self.env.context.get('test_mode'):
                 self.env.cr.commit()
-                self.env.cr.close()
             _logger.debug("Scan of folder_id \"%s\" completed!", folder_id)
             return {}
 
