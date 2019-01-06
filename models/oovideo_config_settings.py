@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models
+from odoo.release import version
 
 
 class VideoConfigSettings(models.TransientModel):
@@ -15,6 +16,7 @@ class VideoConfigSettings(models.TransientModel):
         ('inactive', 'Inactive (user specific)'),
         ('active', 'Active (shared amongst all users)'),
     ], string='Folder Sharing')
+    version = fields.Char('Version', readonly=True)
 
     @api.model
     def get_values(self):
@@ -28,6 +30,7 @@ class VideoConfigSettings(models.TransientModel):
         ).mapped('perm_read')
         res['cron'] = 'active' if all([c for c in cron]) else 'inactive'
         res['folder_sharing'] = 'inactive' if all([c for c in folder_sharing]) else 'active'
+        res['version'] = version
         return res
 
     def set_values(self):
