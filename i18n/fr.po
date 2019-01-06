@@ -8,27 +8,27 @@ msgstr ""
 "Language: fr\n"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_audio_tracks
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__audio_tracks
 msgid "# Audio Tracks"
 msgstr "# Piste Audio"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
 msgid "Added This Month"
 msgstr "Ajouté Ce Mois"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
 msgid "Added Today"
 msgstr "Ajouté Aujourd'hui"
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_media
+#: model_terms:ir.actions.act_window,help:oovideo.action_media
 msgid "As soon as a folder is added in your library, the media will be listed here."
 msgstr "Dès qu'un répertoire est ajouté à votre médiathèque, les medias seront listés ici."
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_audio_tracks_lang
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__audio_tracks_lang
 msgid "Audio Tracks Languages"
 msgstr "Langues des Pistes Audios"
 
@@ -41,37 +41,37 @@ msgstr "Retour à la liste"
 #. module: oovideo
 #. openerp-web
 #: code:addons/oovideo/static/src/xml/media_player.xml:15
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_bitrate
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_bitrate
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__bitrate
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__bitrate
 msgid "Bitrate"
 msgstr "Taux d’échantillonnage"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:66
-#: code:addons/oovideo/static/src/js/media_player.js:88
+#: code:addons/oovideo/static/src/js/browse.js:70
+#: code:addons/oovideo/static/src/js/media_player.js:100
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
 msgid "Browse Files"
 msgstr "Parcourir les Fichiers"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_buffer_size
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__buffer_size
 msgid "Buffer Size (KB)"
 msgstr "Taille du tampon (KB)"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_child_ids
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__child_ids
 msgid "Child Folders"
 msgstr "Répertoires Enfants"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_command
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__command
 msgid "Command line"
 msgstr "Ligne de commande"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder_command
+#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__command
 msgid "Command to execute for transcoding. Specific keywords are automatically replaced:\n"
 "        - \"%i\": input file\n"
 "        - \"%s\": start from this seek time\n"
@@ -94,63 +94,63 @@ msgid "Configuration"
 msgstr "Configuration"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_create_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_create_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_create_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_create_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_create_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__create_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_create_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_create_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_create_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_create_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_create_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__create_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__create_date
 msgid "Created on"
 msgstr "Créé le"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder_bitrate
+#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__bitrate
 msgid "Default bitrate. Can be changed if necessary when the transcoding function is called"
 msgstr "Taux d'échantillonnage par défaut. Peut être chagé si nécessaire quand la fonction d'encodage est appelée."
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_display_name
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_display_name
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_display_name
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_display_name
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_display_name
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__display_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__display_name
 msgid "Display Name"
 msgstr "Nom d'Affichage"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_duration
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__duration
 msgid "Duration"
 msgstr "Durée"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_folder_exclude_autoscan
+#: model:ir.model.fields,help:oovideo.field_oovideo_folder__exclude_autoscan
 msgid "Exclude this folder from the automatized scheduled scan. Useful if the folder is not always accessible, e.g. linked to an external drive."
 msgstr "Exclure ce répertoire de l'analyse programmée automatique. Utile si le répertoire n'est pas toujours accessible, par exemple lié à un disque externe."
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_folder_id
-#: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__folder_id
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
 msgid "Folder"
 msgstr "Répertoire"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_path_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__path_name
 msgid "Folder Name"
 msgstr "Nom du Répertoire"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_path
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__path
 msgid "Folder Path"
 msgstr "Chemin du répertoire"
 
@@ -162,18 +162,18 @@ msgstr "Le chemin du répertoire doit être unique"
 #. module: oovideo
 #: model:ir.actions.act_window,name:oovideo.action_folder
 #: model:ir.ui.menu,name:oovideo.menu_action_folder
-#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
-#: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_tree
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_tree
 msgid "Folders"
 msgstr "Répertoires"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
 msgid "Force Full Scan"
 msgstr "Forcer un Scan Complet"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__name
 msgid "Format"
 msgstr "Format"
 
@@ -183,17 +183,17 @@ msgid "Format name must be unique!"
 msgstr "Le nom du format doit être unique !"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_height
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__height
 msgid "Heigth"
 msgstr "Hauteur"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__id
 msgid "ID"
 msgstr "ID"
 
@@ -204,49 +204,49 @@ msgid "Language"
 msgstr "Langue"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_last_modification
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_last_modification
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__last_modification
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__last_modification
 msgid "Last Modification"
 msgstr "Dernière Modification"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings___last_update
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder___last_update
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan___last_update
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format___last_update
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media___last_update
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder___last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings____last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder____last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan____last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format____last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media____last_update
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder____last_update
 msgid "Last Modified on"
 msgstr "Dernière Modification le"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_last_scan
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__last_scan
 msgid "Last Scanned"
 msgstr "Analysés Dernièrement"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_write_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_write_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_write_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_write_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_write_uid
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__write_uid
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__write_uid
 msgid "Last Updated by"
 msgstr "Dernière Mise-à-jour par"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_write_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan_write_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_write_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_write_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_write_date
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_scan__write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__write_date
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__write_date
 msgid "Last Updated on"
 msgstr "Dernière Mise-à-jour le"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:15
+#: code:addons/oovideo/static/src/js/tour.js:19
 msgid "Let's create a new folder."
 msgstr "Créons un nouveau répertoire."
 
@@ -256,43 +256,43 @@ msgid "Library"
 msgstr "Bibliothèque"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_locked
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__locked
 msgid "Locked"
 msgstr "Verrouillé"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_media_ids
-#: model:ir.ui.view,arch_db:oovideo.oovideo_media_view_form
-#: model:ir.ui.view,arch_db:oovideo.oovideo_media_view_tree
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__media_ids
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_media_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_media_view_tree
 msgid "Media"
 msgstr "Media"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:78
+#: code:addons/oovideo/static/src/js/browse.js:82
 msgid "Media Player"
 msgstr "Lecteur Media"
 
 #. module: oovideo
 #: model:ir.actions.act_window,name:oovideo.action_media
 #: model:ir.ui.menu,name:oovideo.menu_action_media
-#: model:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_media_view_search
 msgid "Medias"
 msgstr "Medias"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_mimetype
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__mimetype
 msgid "Mimetype"
 msgstr "Type MIME"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_name
-#: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__name
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
 msgid "Name"
 msgstr "Nom"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_exclude_autoscan
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__exclude_autoscan
 msgid "No auto-scan"
 msgstr "Pas d'auto-scan"
 
@@ -302,17 +302,17 @@ msgid "Original"
 msgstr "Original"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_output_format
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__output_format
 msgid "Output Format"
 msgstr "Format de Sortie"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_parent_id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__parent_id
 msgid "Parent Folder"
 msgstr "Répertoire Parent"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_path
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__path
 msgid "Path"
 msgstr "Chemin"
 
@@ -323,7 +323,7 @@ msgid "Play"
 msgstr "Lecture"
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_transcoder
+#: model_terms:ir.actions.act_window,help:oovideo.action_transcoder
 msgid "Please read the documentation in a first place."
 msgstr "Veuillez tout d'abord lire la documentation."
 
@@ -346,37 +346,37 @@ msgid "Resolution"
 msgstr "Résolution"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_root_folder_id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__root_folder_id
 msgid "Root Folder"
 msgstr "Répertoire Racine"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
 msgid "Scan"
 msgstr "Scanner"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_last_scan_duration
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__last_scan_duration
 msgid "Scan Duration (s)"
 msgstr "Durée du scan (s)"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_sequence
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__sequence
 msgid "Sequence"
 msgstr "Séquence"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder_sequence
+#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__sequence
 msgid "Sequence used to order the transcoders. The lower the value, the higher the priority"
 msgstr "Séquence utilisée pour ordonner les encodeurs. Une valeur plus basse donne une priorité plus haute."
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_folder
+#: model_terms:ir.actions.act_window,help:oovideo.action_folder
 msgid "Set-up the media directories to scan."
 msgstr "Configurez les répertoires media à analyser."
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder_buffer_size
+#: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__buffer_size
 msgid "Size of the buffer used while streaming. A larger value can reduce the potential\n"
 "        file download errors when playing."
 msgstr "Taille du tampon utilisé pour le streaming. Une valeur plus grande peut réduire les erreur potentielles de téléchargement lors de la lecture."
@@ -388,45 +388,45 @@ msgid "Subtitles"
 msgstr "Sous-titres"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_format_browser_support
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_format__browser_support
 msgid "Supported by browser"
 msgstr "Supporté par le navigateur"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__name
 msgid "Title"
 msgstr "Titre"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_root
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__root
 msgid "Top Level Folder"
 msgstr "Répertoire de plus Haut Niveau"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_transcoder_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_transcoder_view_form
 msgid "Transcoder"
 msgstr "Encodeur"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_name
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__name
 msgid "Transcoder Name"
 msgstr "Nom de l'Encodeur"
 
 #. module: oovideo
 #: model:ir.actions.act_window,name:oovideo.action_transcoder
 #: model:ir.ui.menu,name:oovideo.menu_action_transcoder
-#: model:ir.ui.view,arch_db:oovideo.oovideo_transcoder_view_tree
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_transcoder_view_tree
 msgid "Transcoders"
 msgstr "Encodeurs"
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder_scan.py:207
+#: code:addons/oovideo/models/oovideo_folder_scan.py:198
 msgid "Unknown"
 msgstr "Inconnu"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder_user_id
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_user_id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__user_id
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__user_id
 msgid "User"
 msgstr "Utilisateur"
 
@@ -461,50 +461,50 @@ msgid "Video Transcoder"
 msgstr "Encodeur Vidéo"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_folder_locked
+#: model:ir.model.fields,help:oovideo.field_oovideo_folder__locked
 msgid "When a folder is being scanned, it is flagged as \"locked\". It might be necessary to unlock it manually if scanning has failed or has been interrupted."
 msgstr "Quand un répertoire est analysé, il est marqué comme \"bloqué\". Il peut être nécessaire de le débloquer manuellement si l'analyse a rencontré une erreur ou a été interrompue."
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_media_width
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_media__width
 msgid "Width"
 msgstr "Largeur"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:19
+#: code:addons/oovideo/static/src/js/tour.js:23
 msgid "Write the full path of your folder. Click on the 'Scan' button to add the content to your library!"
 msgstr "Écrivez le chemin complet de votre répertoire. Cliquez sur le bouton \"Sauvegarder\" pour ajouter le contenu à votre bibliothèque."
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_transcoder
+#: model_terms:ir.actions.act_window,help:oovideo.action_transcoder
 msgid "You can define your own media transcoders."
 msgstr "Vous pouvez définir votre propre encodeur."
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_media
+#: model_terms:ir.actions.act_window,help:oovideo.action_media
 msgid "You will find here all your medias."
 msgstr "Vous trouverez ici tous les médias."
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:11
+#: code:addons/oovideo/static/src/js/tour.js:15
 msgid "Add your first media folder <b>here</b>"
 msgstr "Ajoutez votre premier répertoire média <b>ici</b>"
 
 #. module: oovideo
-#: model:ir.actions.act_window,help:oovideo.action_folder
+#: model_terms:ir.actions.act_window,help:oovideo.action_folder
 msgid "Your videos wil be automatically listed in the corresponding menu. Scanning a\n"
 "                directory is usually quite fast, taking around 30 seconds to scan 150 files."
 msgstr "Vos vidéos seront automatiquement listée dans les menus correspondants. L'analyse d'un répertoire est habituellement assez rapide, avec une durée d'environ 30 secondes pour 150 fichiers."
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder_input_formats
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__input_formats
 msgid "Input Formats"
 msgstr "Formats d'Entrée"
 
 #. module: oovideo
-#: model:ir.model.fields,help:oovideo.field_oovideo_config_settings_cron
+#: model:ir.model.fields,help:oovideo.field_oovideo_config_settings__cron
 msgid "Activate automatic folder scan and image cache mechanism"
 msgstr "Activer l'analyse automatique des répertoires et le mécanisme de cache d'image"
 
@@ -519,27 +519,27 @@ msgid "Active (shared amongst all users)"
 msgstr "Actif (partagé entre tous les utilisateurs)"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
 msgid "Apply"
 msgstr "Appliquer"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
 msgid "Cancel"
 msgstr "Annuler"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
 msgid "Configure OOVideo"
 msgstr "Configurer OOVideo"
 
 #. module: oovideo
-#: model:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_config_settings_view_form
 msgid "Features"
 msgstr "Fonctionnalités"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_folder_sharing
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__folder_sharing
 msgid "Folder Sharing"
 msgstr "Partage de répertoire"
 
@@ -554,7 +554,7 @@ msgid "Inactive (user specific)"
 msgstr "Inactif (spécifique à l'utilisateur)"
 
 #. module: oovideo
-#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings_cron
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__cron
 msgid "Scheduled Actions"
 msgstr "Actions planifiées"
 
@@ -574,5 +574,26 @@ msgstr ""
 #: model:ir.cron,cron_name:oovideo.oovideo_scan_folder
 #: model:ir.cron,name:oovideo.oovideo_scan_folder
 msgid "oovideo.scan.folder"
+msgstr ""
+
+#. module: oovideo
+#. openerp-web
+#: code:addons/oovideo/static/src/js/tour.js:11
+msgid "Explore the configuration"
+msgstr ""
+
+#. module: oovideo
+#: code:addons/oovideo/models/oovideo_folder.py:70
+msgid "No track found"
+msgstr "Aucune piste trouvée"
+
+#. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_folder__root_preview
+msgid "Preview Folder Content"
+msgstr "Contenu du répertoire"
+
+#. module: oovideo
+#: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__version
+msgid "Version"
 msgstr ""
 
