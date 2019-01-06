@@ -186,12 +186,12 @@ class VideoFolderScan(models.TransientModel):
             }
             for track in media_info.tracks:
                 if track.track_type == 'General':
-                    vals['duration'] = int(float(track.duration))
+                    vals['duration'] = int(float(track.duration or 0.0))
                 elif track.track_type == 'Video':
                     vals['height'] = track.height
                     vals['width'] = track.width
                     vals['bitrate'] = int(
-                        (track.bit_rate or track.nominal_bit_rate or 0.0) / 1000.0)
+                        float(track.bit_rate or track.nominal_bit_rate or 0.0) / 1000.0)
                 elif track.track_type == 'Audio':
                     vals['audio_tracks'] += 1
                     vals['audio_tracks_lang'] +=\
