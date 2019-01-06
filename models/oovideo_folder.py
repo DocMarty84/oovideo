@@ -52,7 +52,6 @@ class VideoFolder(models.Model):
             for rootdir, dirnames, filenames in os.walk(folder.path):
                 ii = 0
                 for fn in filenames:
-                    print(fn)
                     # Check file extension
                     fn_ext = fn.split('.')[-1]
                     if fn_ext and fn_ext.lower() not in ALLOWED_FILE_EXTENSIONS:
