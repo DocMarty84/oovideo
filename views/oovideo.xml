@@ -6,8 +6,7 @@
                 <link rel="stylesheet" href="/oovideo/static/src/scss/browse.scss"/>
                 <link rel="stylesheet" href="/oovideo/static/src/scss/media_player.scss"/>
 
-                <script type="text/javascript" src="/oovideo/static/lib/clappr.js"></script>
-                <script type="text/javascript" src="/oovideo/static/lib/subtitles.js"></script>
+                <script type="text/javascript" src="/oovideo/static/lib/clappr/clappr.js"></script>
                 <script type="text/javascript" src="/oovideo/static/src/js/media_player.js"></script>
                 <script type="text/javascript" src="/oovideo/static/src/js/browse.js"></script>
 

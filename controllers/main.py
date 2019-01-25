@@ -2,6 +2,7 @@
 
 import logging
 import os
+from tempfile import NamedTemporaryFile
 
 from werkzeug.exceptions import NotFound
 from werkzeug.wrappers import Response
@@ -9,6 +10,12 @@ from werkzeug.wsgi import wrap_file
 
 from odoo import http
 from odoo.http import request
+
+try:
+    from webvtt import webvtt
+except ImportError:
+    webvtt = None
+
 
 _logger = logging.getLogger(__name__)
 
@@ -32,10 +39,21 @@ class VideoController(http.Controller):
         data = wrap_file(request.httprequest.environ, generator)
         return Response(data, mimetype=mimetype, direct_passthrough=True)
 
-    @http.route(['/oovideo/sub/<int:media_id>.srt'], type='http', auth='user')
+    @http.route(['/oovideo/sub/<int:media_id>'], type='http', auth='user')
     def sub(self, media_id, **kwargs):
         media = request.env['oovideo.media'].browse([media_id])
-        sub = media.folder_id.path + os.sep + kwargs.get('sub', '')
+        sub = os.path.join(media.folder_id.path, kwargs.get('sub', '').split(os.sep)[-1])
         if os.path.isfile(sub):
-            return http.send_file(sub, mimetype='application/x-subrip')
+            with NamedTemporaryFile(mode='w', encoding='utf-8', delete=False) as sub_tmp:
+                sub_send = sub_tmp.name
+                sub_ext = os.path.splitext(sub)[1]
+                if sub_ext == '.srt' and webvtt:
+                    webvtt.WebVTT().from_srt(sub).write(sub_tmp)
+                elif sub_ext == '.sbv' and webvtt:
+                    webvtt.WebVTT().from_sbv(sub).write(sub_tmp)
+                elif sub_ext == '.vtt':
+                    sub_send = sub
+                else:
+                    raise NotFound()
+                return http.send_file(sub_send, mimetype='text/vtt')
         raise NotFound()

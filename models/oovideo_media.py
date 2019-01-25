@@ -42,6 +42,10 @@ class VideoMedia(models.Model):
         ]
         br_list = [self.bitrate] + [b for b in BR_LIST if b <= self.bitrate]
         os.chdir(self.folder_id.path)
+        sub_files = []
+        for sub_type in ('*.srt', '*.vtt', '*.sbv'):
+            sub_files.extend(glob.glob(glob.escape(os.path.splitext(self.path)[0]) + sub_type))
+
         return {
             'name': self.name,
             'height': self.height,
@@ -50,7 +54,13 @@ class VideoMedia(models.Model):
             'br_list': br_list,
             'res_list': res_list,
             'sub_list': [
-                os.path.basename(f) for f in glob.glob(os.path.splitext(self.path)[0] + '*.srt')
+                {
+                    'srclang': 'en',
+                    'kind': 'subtitles',
+                    'label': os.path.basename(f),
+                    'src': '/oovideo/sub/{}?sub={}'.format(self.id, os.path.basename(f)),
+                }
+                for f in sub_files
             ]
         }
 

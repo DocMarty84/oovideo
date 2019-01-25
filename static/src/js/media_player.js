@@ -1,14 +1,14 @@
 odoo.define('oovideo.MediaPlayer', function (require) {
 'use strict';
 
+var AbstractAction = require('web.AbstractAction');
 var core = require('web.core');
-var Widget = require('web.Widget');
 
 var QWeb = core.qweb;
 var _t = core._t;
 
 
-var MediaPlayer = Widget.extend({
+var MediaPlayer = AbstractAction.extend({
     events: {
         'click .oov_folder': '_onClickFolder',
         'click .oov_reload': '_onClickReload',
@@ -42,10 +42,6 @@ var MediaPlayer = Widget.extend({
         return this._super.apply(this, arguments);
     },
 
-    canBeRemoved: function () {
-        return $.when();
-    },
-
     //--------------------------------------------------------------------------
     // Private
     //--------------------------------------------------------------------------
@@ -57,8 +53,6 @@ var MediaPlayer = Widget.extend({
         this.$('.oov_res').val(this.resolution !== 'orig' ? this.resolution : this.media_info.res_list[0])
         this.lang = this.media_info.audio_tracks_lang && this.media_info.audio_tracks_lang[0] || '0';
         this.$('.oov_lang').val(this.lang);
-        this.sub = this.media_info.sub_list && this.media_info.sub_list[0] || '';
-        this.$('.oov_sub').val(this.sub);
     },
 
     _initClappr: function () {
@@ -66,14 +60,15 @@ var MediaPlayer = Widget.extend({
         this.player = new Clappr.Player({
             source: this._makeSourceURL(),
             autoPlay: true,
-            plugins: [ClapprSubtitle],
-            subtitle: {
-                src: this._makeSubtitleURL(),
-                auto: true,
-                fontSize: '20px',
-                backgroundColor: 'transparent',
-                textShadow: '2px 2px 4px #000000',
-            },
+            chromeless: this.media_info.sub_list.length > 0 ? true : false,
+            playback: {
+                preload: 'auto',
+                controls: this.media_info.sub_list.length > 0 ? true : false,
+                playInline: true,
+                recycleVideo: Clappr.Browser.isMobile,
+                externalTracks: this.media_info.sub_list,
+              }
+
         });
         this.player.attachTo(this.playerElement[0]);
     },
@@ -83,10 +78,6 @@ var MediaPlayer = Widget.extend({
             + '?br=' + String(this.bitrate)
             + '&res=' + this.resolution
             + '&lang=' + this.lang.split(':')[0];
-    },
-
-    _makeSubtitleURL: function () {
-        return '/oovideo/sub/' + this.media_id + '.srt?sub=' + this.sub;
     },
 
     //--------------------------------------------------------------------------
@@ -110,7 +101,6 @@ var MediaPlayer = Widget.extend({
         this.resolution = this.$('.oov_res').val()
         this.resolution = this.resolution !== this.media_info.res_list[0] ? this.resolution : 'orig';
         this.lang = this.$('.oov_lang').val();
-        this.sub = this.$('.oov_sub').val();
         this.raw = this.$('.oov_raw').is(':checked');
         this.player.destroy();
         this._initClappr();
