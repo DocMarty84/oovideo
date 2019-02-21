@@ -48,8 +48,8 @@ msgstr "Taux d’échantillonnage"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:70
-#: code:addons/oovideo/static/src/js/media_player.js:100
+#: code:addons/oovideo/static/src/js/browse.js:66
+#: code:addons/oovideo/static/src/js/media_player.js:91
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
 msgid "Browse Files"
@@ -329,13 +329,13 @@ msgstr "Veuillez tout d'abord lire la documentation."
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:59
+#: code:addons/oovideo/static/src/xml/media_player.xml:49
 msgid "Raw"
 msgstr "Pas de Conversion"
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:63
+#: code:addons/oovideo/static/src/xml/media_player.xml:53
 msgid "Reload"
 msgstr "Recharger"
 
@@ -380,12 +380,6 @@ msgstr "Configurez les répertoires media à analyser."
 msgid "Size of the buffer used while streaming. A larger value can reduce the potential\n"
 "        file download errors when playing."
 msgstr "Taille du tampon utilisé pour le streaming. Une valeur plus grande peut réduire les erreur potentielles de téléchargement lors de la lecture."
-
-#. module: oovideo
-#. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:45
-msgid "Subtitles"
-msgstr "Sous-titres"
 
 #. module: oovideo
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format__browser_support
@@ -580,10 +574,10 @@ msgstr ""
 #. openerp-web
 #: code:addons/oovideo/static/src/js/tour.js:11
 msgid "Explore the configuration"
-msgstr ""
+msgstr "Explorer la configuration"
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder.py:70
+#: code:addons/oovideo/models/oovideo_folder.py:69
 msgid "No track found"
 msgstr "Aucune piste trouvée"
 
@@ -595,5 +589,5 @@ msgstr "Contenu du répertoire"
 #. module: oovideo
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_config_settings__version
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
