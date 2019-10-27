@@ -7,6 +7,7 @@ from odoo.release import version
 class VideoConfigSettings(models.TransientModel):
     _name = "oovideo.config.settings"
     _inherit = "res.config.settings"
+    _description = "Video Settings"
 
     cron = fields.Selection(
         [("active", "Active"), ("inactive", "Inactive")],
