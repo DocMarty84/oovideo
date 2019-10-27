@@ -90,7 +90,6 @@ class VideoFolder(models.Model):
             vals["path"] = os.path.normpath(vals["path"])
         return super(VideoFolder, self).create(vals)
 
-    @api.multi
     def write(self, vals):
         if "path" in vals:
             vals["path"] = os.path.normpath(vals["path"])
@@ -100,7 +99,6 @@ class VideoFolder(models.Model):
             tracks.write({"last_modification": 0})
         return super(VideoFolder, self).write(vals)
 
-    @api.multi
     def action_scan_folder(self):
         """
         This is the main method used to scan a oovideo folder. It creates a thread with the scanning
@@ -110,7 +108,6 @@ class VideoFolder(models.Model):
         if folder_id:
             self.env["oovideo.folder.scan"].scan_folder_th(folder_id)
 
-    @api.multi
     def action_scan_folder_full(self):
         """
         This is a method used to force a full scan of a folder.
@@ -134,7 +131,6 @@ class VideoFolder(models.Model):
                 _logger.info("Error while scanning folder ID %s", folder.id)
                 continue
 
-    @api.multi
     def oovideo_browse(self):
         res = {}
         if self.root or self.parent_id:
