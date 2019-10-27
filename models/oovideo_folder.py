@@ -53,7 +53,10 @@ class VideoFolder(models.Model):
     @api.depends("path")
     def _compute_root_preview(self):
         ALLOWED_FILE_EXTENSIONS = self.env["oovideo.folder.scan"].ALLOWED_FILE_EXTENSIONS
-        for folder in self.filtered(lambda f: f.root and f.path):
+        for folder in self:
+            if not folder.root or not folder.path:
+                folder.root_preview = False
+                continue
             i = 0
             fn_paths = ""
             for rootdir, dirnames, filenames in os.walk(folder.path):
