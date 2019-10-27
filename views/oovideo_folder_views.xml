@@ -10,6 +10,9 @@
                     <button name="action_scan_folder_full" string="Force Full Scan"
                         type="object" groups="base.group_no_one"/>
                 </header>
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('locked', '=', False)]}">
+                    This folder is being scanned. The video library will be updated progressively.
+                </div>
                 <sheet>
                     <field name="user_id" invisible="1"/>
                     <field name="root" invisible="1"/>
