@@ -1,14 +1,15 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* oovideo
+# 	* oovideo
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server v2.2.0\n"
+"Project-Id-Version: Odoo Server v3.0.0-beta.1\n"
+"\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-30 21:56+0000\n"
-"PO-Revision-Date: 2019-04-30 21:56+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2019-12-15 08:59+0000\n"
+"PO-Revision-Date: 2019-12-15 08:59+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,18 +27,18 @@ msgid "Activate automatic folder scan and image cache mechanism"
 msgstr ""
 
 #. module: oovideo
-#: selection:oovideo.config.settings,cron:0
+#: model:ir.model.fields.selection,name:oovideo.selection__oovideo_config_settings__cron__active
 msgid "Active"
 msgstr ""
 
 #. module: oovideo
-#: selection:oovideo.config.settings,folder_sharing:0
+#: model:ir.model.fields.selection,name:oovideo.selection__oovideo_config_settings__folder_sharing__active
 msgid "Active (shared amongst all users)"
 msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:15
+#: code:addons/oovideo/static/src/js/tour.js:0
 #, python-format
 msgid "Add your first media folder <b>here</b>"
 msgstr ""
@@ -59,7 +60,8 @@ msgstr ""
 
 #. module: oovideo
 #: model_terms:ir.actions.act_window,help:oovideo.action_media
-msgid "As soon as a folder is added in your library, the media will be listed here."
+msgid ""
+"As soon as a folder is added in your library, the media will be listed here."
 msgstr ""
 
 #. module: oovideo
@@ -69,14 +71,14 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:7
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #, python-format
 msgid "Back to list"
 msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:15
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_media__bitrate
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_transcoder__bitrate
 #, python-format
@@ -85,8 +87,8 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:66
-#: code:addons/oovideo/static/src/js/media_player.js:91
+#: code:addons/oovideo/static/src/js/browse.js:0
+#: code:addons/oovideo/static/src/js/media_player.js:0
 #: model:ir.actions.client,name:oovideo.action_oovideo_browse
 #: model:ir.ui.menu,name:oovideo.menu_action_oovideo_browse
 #, python-format
@@ -115,7 +117,8 @@ msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__command
-msgid "Command to execute for transcoding. Specific keywords are automatically replaced:\n"
+msgid ""
+"Command to execute for transcoding. Specific keywords are automatically replaced:\n"
 "        - \"%i\": input file\n"
 "        - \"%s\": start from this seek time\n"
 "        - \"%d\": duration\n"
@@ -157,7 +160,9 @@ msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__bitrate
-msgid "Default bitrate. Can be changed if necessary when the transcoding function is called"
+msgid ""
+"Default bitrate. Can be changed if necessary when the transcoding function "
+"is called"
 msgstr ""
 
 #. module: oovideo
@@ -177,12 +182,14 @@ msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_folder__exclude_autoscan
-msgid "Exclude this folder from the automatized scheduled scan. Useful if the folder is not always accessible, e.g. linked to an external drive."
+msgid ""
+"Exclude this folder from the automatized scheduled scan. Useful if the "
+"folder is not always accessible, e.g. linked to an external drive."
 msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:11
+#: code:addons/oovideo/static/src/js/tour.js:0
 #, python-format
 msgid "Explore the configuration"
 msgstr ""
@@ -214,7 +221,7 @@ msgid "Folder Sharing"
 msgstr ""
 
 #. module: oovideo
-#: sql_constraint:oovideo.folder:0
+#: model:ir.model.constraint,message:oovideo.constraint_oovideo_folder_oovideo_folder_path_uniq
 msgid "Folder path must be unique!"
 msgstr ""
 
@@ -237,7 +244,7 @@ msgid "Format"
 msgstr ""
 
 #. module: oovideo
-#: sql_constraint:oovideo.format:0
+#: model:ir.model.constraint,message:oovideo.constraint_oovideo_format_oovideo_format_name_uniq
 msgid "Format name must be unique!"
 msgstr ""
 
@@ -257,12 +264,12 @@ msgid "ID"
 msgstr ""
 
 #. module: oovideo
-#: selection:oovideo.config.settings,cron:0
+#: model:ir.model.fields.selection,name:oovideo.selection__oovideo_config_settings__cron__inactive
 msgid "Inactive"
 msgstr ""
 
 #. module: oovideo
-#: selection:oovideo.config.settings,folder_sharing:0
+#: model:ir.model.fields.selection,name:oovideo.selection__oovideo_config_settings__folder_sharing__inactive
 msgid "Inactive (user specific)"
 msgstr ""
 
@@ -273,7 +280,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:35
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #, python-format
 msgid "Language"
 msgstr ""
@@ -321,7 +328,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:19
+#: code:addons/oovideo/static/src/js/tour.js:0
 #, python-format
 msgid "Let's create a new folder."
 msgstr ""
@@ -345,7 +352,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/browse.js:78
+#: code:addons/oovideo/static/src/js/browse.js:0
 #, python-format
 msgid "Media Player"
 msgstr ""
@@ -374,15 +381,13 @@ msgid "No auto-scan"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder.py:69
-#: code:addons/oovideo/models/oovideo_folder.py:76
+#: code:addons/oovideo/models/oovideo_folder.py:0
 #, python-format
 msgid "No track found"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_media.py:38
-#: code:addons/oovideo/models/oovideo_media.py:44
+#: code:addons/oovideo/models/oovideo_media.py:0
 #, python-format
 msgid "Original"
 msgstr ""
@@ -404,7 +409,7 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/browse.xml:18
+#: code:addons/oovideo/static/src/xml/browse.xml:0
 #, python-format
 msgid "Play"
 msgstr ""
@@ -421,21 +426,21 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:49
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #, python-format
 msgid "Raw"
 msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:53
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #, python-format
 msgid "Reload"
 msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/xml/media_player.xml:25
+#: code:addons/oovideo/static/src/xml/media_player.xml:0
 #, python-format
 msgid "Resolution"
 msgstr ""
@@ -467,7 +472,9 @@ msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__sequence
-msgid "Sequence used to order the transcoders. The lower the value, the higher the priority"
+msgid ""
+"Sequence used to order the transcoders. The lower the value, the higher the "
+"priority"
 msgstr ""
 
 #. module: oovideo
@@ -483,13 +490,21 @@ msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_transcoder__buffer_size
-msgid "Size of the buffer used while streaming. A larger value can reduce the potential\n"
+msgid ""
+"Size of the buffer used while streaming. A larger value can reduce the potential\n"
 "        file download errors when playing."
 msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,field_description:oovideo.field_oovideo_format__browser_support
 msgid "Supported by browser"
+msgstr ""
+
+#. module: oovideo
+#: model_terms:ir.ui.view,arch_db:oovideo.oovideo_folder_view_form
+msgid ""
+"This folder is being scanned. The video library will be updated "
+"progressively."
 msgstr ""
 
 #. module: oovideo
@@ -520,8 +535,7 @@ msgid "Transcoders"
 msgstr ""
 
 #. module: oovideo
-#: code:addons/oovideo/models/oovideo_folder_scan.py:184
-#: code:addons/oovideo/models/oovideo_folder_scan.py:198
+#: code:addons/oovideo/models/oovideo_folder_scan.py:0
 #, python-format
 msgid "Unknown"
 msgstr ""
@@ -563,13 +577,21 @@ msgid "Video Media"
 msgstr ""
 
 #. module: oovideo
+#: model:ir.model,name:oovideo.model_oovideo_config_settings
+msgid "Video Settings"
+msgstr ""
+
+#. module: oovideo
 #: model:ir.model,name:oovideo.model_oovideo_transcoder
 msgid "Video Transcoder"
 msgstr ""
 
 #. module: oovideo
 #: model:ir.model.fields,help:oovideo.field_oovideo_folder__locked
-msgid "When a folder is being scanned, it is flagged as \"locked\". It might be necessary to unlock it manually if scanning has failed or has been interrupted."
+msgid ""
+"When a folder is being scanned, it is flagged as \"locked\". It might be "
+"necessary to unlock it manually if scanning has failed or has been "
+"interrupted."
 msgstr ""
 
 #. module: oovideo
@@ -579,9 +601,11 @@ msgstr ""
 
 #. module: oovideo
 #. openerp-web
-#: code:addons/oovideo/static/src/js/tour.js:23
+#: code:addons/oovideo/static/src/js/tour.js:0
 #, python-format
-msgid "Write the full path of your folder. Click on the 'Scan' button to add the content to your library!"
+msgid ""
+"Write the full path of your folder. Click on the 'Scan' button to add the "
+"content to your library!"
 msgstr ""
 
 #. module: oovideo
@@ -596,13 +620,9 @@ msgstr ""
 
 #. module: oovideo
 #: model_terms:ir.actions.act_window,help:oovideo.action_folder
-msgid "Your videos wil be automatically listed in the corresponding menu. Scanning a\n"
+msgid ""
+"Your videos wil be automatically listed in the corresponding menu. Scanning a\n"
 "                directory is usually quite fast, taking around 30 seconds to scan 150 files."
-msgstr ""
-
-#. module: oovideo
-#: model:ir.model,name:oovideo.model_oovideo_config_settings
-msgid "oovideo.config.settings"
 msgstr ""
 
 #. module: oovideo
@@ -611,4 +631,3 @@ msgstr ""
 #: model:ir.cron,name:oovideo.oovideo_scan_folder
 msgid "oovideo.scan.folder"
 msgstr ""
-
